@@ -1,0 +1,99 @@
+<div *ngIf="isReady">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card class="card-header">
+      <mat-card-header>
+        <mat-card-title>{{userData.first_name}} {{userData.last_name}}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-subtitle>Personal Information</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <img [src]="this.userData.avatar">
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <input matInput formControlName="gender">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput type="tel" formControlName="phone_number">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput formControlName="date_of_birth"
+                   [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+      </mat-card-content>
+    </mat-card>
+
+
+
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-subtitle>Employment</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="employment_title">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Key Skill</mat-label>
+          <input matInput formControlName="employment_key_skill">
+        </mat-form-field>
+
+      </mat-card-content>
+    </mat-card>
+
+
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-subtitle>Address</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Country</mat-label>
+          <input matInput formControlName="address_country">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>State</mat-label>
+          <input matInput formControlName="address_state">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <input matInput formControlName="address_city">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Street Name</mat-label>
+          <input matInput formControlName="address_street_name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Street Address</mat-label>
+          <input matInput formControlName="address_street_address">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Zip Code</mat-label>
+          <input matInput formControlName="address_zip_code">
+        </mat-form-field>
+
+      </mat-card-content>
+    </mat-card>
+    <button mat-flat-button color="primary" type="submit">Submit</button>
+  </form>
+
+
+</div>
